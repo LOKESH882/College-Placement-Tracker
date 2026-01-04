@@ -18,8 +18,6 @@ let displayJobRoles = async(jobroles)=>{
     <div class = "jobrole-card">
     <h4>Role ID: ${ele.role_id}</h4>
     <h5>Job Title: ${ele.title}</h5>
-    <button id="edit">Edit</button>
-    <button id="delete">Delete</button>
     </div>
     `).join("")
 };

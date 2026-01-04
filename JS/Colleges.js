@@ -21,9 +21,6 @@ let displayColleges = async(colleges)=>{
     <h4>Name: ${ele.name}</h4>
     <h5>Type: ${ele.type}</h5>
     <h5>Established: ${ele.established_year}</h5>
-    <button id="edit">Edit</button>
-    <button id="delete">Delete</button>
     </div>
     `).join("")
-    
 };

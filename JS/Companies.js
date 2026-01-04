@@ -16,13 +16,12 @@ callCompaniesFromApi();
 
 let displayCompanies = async(companies)=>{
     console.log('Companies data:', companies);
+    console.log('First company keys:', Object.keys(companies[0]));
     companiesContainer.innerHTML = companies.map((ele)=>`
     <div class = "company-card">
     <h4>Company ID: ${ele.company_id}</h4>
     <h4>Name: ${ele.name}</h4>
     <h5>Industry: ${ele.industry}</h5>
-    <button id="edit">Edit</button>
-    <button id="delete">Delete</button>
     </div>
     `).join("")
 };

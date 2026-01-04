@@ -9,6 +9,7 @@ let callStudentsFromApi = async() =>{
 callStudentsFromApi();
 
 let displayStudents = async(students)=>{
+    console.log("Student object keys:", Object.keys(students[0]));
     studentsContainer.innerHTML = students.map((ele)=>`
     <div class = "student-card">
     <img src="${ele.personal_info?.profile_image}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -16,12 +17,26 @@ let displayStudents = async(students)=>{
     <h4>Name: ${ele.personal_info?.full_name}</h4>
     <h4>College ID: ${ele.academic_info?.college_id}</h4>
     <h5>Placement Status: ${ele.placement_status}</h5>
-    <button id="edit">Edit</button>
-    <button id="delete">Delete</button>
+    <button id="edit" onclick="editStudent('${ele.student_id}')">Edit</button>
+    <button id="delete" onclick="deleteStudent('${ele.student_id}')">Delete</button>
     </div>
     `).join("")
     
 };
+
+let editStudent=(id)=>{
+    console.log("edit Student");
+    window.location.href=`../HTML/editStudent.html?id=${id}`
+}
+
+let deleteStudent= async(id)=>{
+    let confirmDelete = confirm("Are you sure you want to delete this student?");
+    if(!confirmDelete) return
+    await fetch(`https://placementstracker-4.onrender.com/api/students/${id}`,{
+        method:"DELETE"
+    });
+    callStudentsFromApi();
+}
 
 let placedStudents = document.getElementById("placedStudents")
 placedStudents.addEventListener("click",()=>{

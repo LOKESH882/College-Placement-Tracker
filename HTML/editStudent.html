@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/forms.css">
+    <link rel="stylesheet" href="../CSS/header.css">
+</head>
+<body>
+<header id="header">
+<h1>College Placement Tracker</h1>
+
+<input type="search" placeholder="Search...">
+
+<nav id="navlinks">
+    <a href="./index.html">Home</a>
+    <a href="./Colleges.html">Colleges</a>
+    <a href="./Students.html">Students</a>
+    <a href="./Companies.html">Companies</a>
+    <a href="./JobRoles.html">Job Roles</a>
+</nav>
+</header>
+<br>
+<h2>Edit Student</h2>
+    <form id="studentForm">
+        <input type="text" placeholder="Enter Student Name" id="studentName" required>
+        <select id="studentGender" required>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+        <input type="date" id="dob" required>
+        <input type="text" placeholder="Enter College ID" id="collegeId" required>
+        <input type="text" placeholder="Enter Department" id="department" required>
+        <input type="text" placeholder="Enter Degree" id="degree" required>
+        <input type="text" placeholder="Enter Year of Graduation" id="graduation" required>
+        <input type="number" placeholder="Enter CGPA" id="cgpa" required>
+        <input type="number" placeholder="Enter Number of Backlogs" id="backlogs" required>
+        <input type="text" placeholder="Enter Programming Languages" id="programming" required>
+        <input type="text" placeholder="Enter DataBase" id="database" required>
+        <input type="text" placeholder="Enter Tools" id="tools" required>
+        <select id="placementStatus" required>
+            <option value="">Select Placement Status</option>
+            <option>Placed</option>
+            <option>Not Placed</option>
+        </select>
+        <button type="submit">Edit Student</button>
+    </form>
+
+<script src="../JS/api.js"></script>
+<script src="../JS/editStudent.js"></script>
+</body>
+</html>
